@@ -10,7 +10,7 @@ var mango1, mango2,mango3,mango4,mango5,mango6,mango7,mango8,mango9,mango10,mang
 var world,boy;
 
 function preload(){
-	boy=loadImage("images/boy.png");
+	boy=loadImage("boy.png");
   }
 
 function setup() {
@@ -103,7 +103,7 @@ function detectollision(stone,mango){
 function keyPressed(){
 	if (keyCode === 32) {
 		Matter.Body.setPosition(stoneObj.body, {x:240,y:421})
-		launcherObject.attach(stoneObj.body);
+		stoneObj.attach(launcherObject.body);
 	}
 }
 

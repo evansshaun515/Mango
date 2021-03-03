@@ -16,10 +16,10 @@ class Slingshot{
         this.sling.bodyA = null;
     }
 
-    // attach()
-    // {
-    //     stoneObj.body.setPosition(launcherObject);
-    // }
+    attach()
+    {
+        stoneObj.body.setPosition(launcherObject);
+    }
 
     display(){
         if (this.sling.bodyA)
