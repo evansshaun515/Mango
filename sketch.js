@@ -96,7 +96,7 @@ function detectollision(stone,mango){
 	var distance = dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y)
 	if (distance <= mango.r + stone.r)
 	{
-		Matter.Body.setStatic(mango.body,false);
+		Matter.Body.setStatic(mango.body,false); 
 	}
 }
 
