@@ -9,6 +9,8 @@ var treeObj, stoneObj,groundObject, launcherObject;
 var mango1, mango2,mango3,mango4,mango5,mango6,mango7,mango8,mango9,mango10,mango11;
 var world,boy;
 
+//var lmango, lstone;
+
 function preload(){
 	boy=loadImage("boy.png");
   }
@@ -89,21 +91,22 @@ function mouseReleased()
     launcherObject.fly();
 }
 
-function detectollision(stone,mango){
-	mangoBodyPosition = mango.body.position
-	stoneBodyPosition = stone.body.position
+function detectollision(lstone,lmango){
+	mangoBodyPosition = lmango.body.position
+	stoneBodyPosition = lstone.body.position
 
 	var distance = dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y)
-	if (distance <= mango.r + stone.r)
+  //console.log(distance);
+	if (distance <= lmango.r + lstone.r)
 	{
-		Matter.Body.setStatic(mango.body,false); 
+		Matter.Body.setStatic(lmango.body,false); 
 	}
 }
 
 function keyPressed(){
 	if (keyCode === 32) {
 		Matter.Body.setPosition(stoneObj.body, {x:240,y:421})
-		stoneObj.attach(launcherObject.body);
+		launcherObject.attach(stoneObj.body);
 	}
 }
 

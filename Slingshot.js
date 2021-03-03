@@ -18,7 +18,8 @@ class Slingshot{
 
     attach()
     {
-        stoneObj.body.setPosition(launcherObject);
+        // stoneObj.body.attach(launcherObject);
+        launcherObject = new Slingshot(stoneObj.body,{x:240,y:421});
     }
 
     display(){
